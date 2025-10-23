@@ -7,7 +7,7 @@ import { BsCircleFill, BsFillCheckCircleFill, BsFillTrashFill } from "react-icon
 function Home() {
     const [todos, setTodos] = useState([]);
     useEffect(() => {
-        axios.get("http://localhost:3001/get")
+        axios.get("https://todolist-mern-stack-be.vercel.app/get")
         .then(response => {
             setTodos(response.data.todos);
         })
@@ -15,7 +15,7 @@ function Home() {
     }, [])
 
     const handleEdit = (id) => {  
-         axios.put("http://localhost:3001/update/" + id)
+         axios.put("https://todolist-mern-stack-be.vercel.app/update/" + id)
         .then(response => {
             location.reload();
         })
@@ -23,7 +23,7 @@ function Home() {
     }
 
     const handleDelete = (id) => {  
-         axios.put("http://localhost:3001/delete/" + id)
+         axios.put("https://todolist-mern-stack-be.vercel.app/delete/" + id)
         .then(response => {
             location.reload();
         })

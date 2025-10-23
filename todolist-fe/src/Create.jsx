@@ -6,7 +6,7 @@ import axios from "axios";
 function Home() {
     const [task, setTask] = useState([]);
     const handleAddTask = () => {
-        axios.post("http://localhost:3001/add", { task: task })
+        axios.post("https://todolist-mern-stack-be.vercel.app/add", { task: task })
         .then(result => {
           location.reload();
         })
